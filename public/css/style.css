@@ -1,0 +1,66 @@
+body {
+    background: #0B2E24;
+}
+
+#header {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+    background: #2A400F;
+    height: 50px;
+    
+    border-bottom: 1px solid #050B1D;
+    
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+
+#header div {
+    float: left;
+    width: 75px;
+    height: 40px;
+    margin: 5px; 
+    background: #3F5820;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #050B1D;
+}
+
+#header div:hover {
+    border: 1px solid #0F1830;
+    background: #516736;
+    cursor: pointer;
+}
+
+#header div {
+    line-height: 40px;
+}
+
+#header #current {
+    background: #516736;
+}
+
+#header #current:hover {
+    background:#799557;
+}
+
+#login {
+    float: right;
+}
+
+a {
+    color: black;
+}
+
+a:clicked {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}

@@ -1,0 +1,5 @@
+http://paletton.com/#uid=5390F0kkuc8dfkAfeeaoK8Tu85m
+
+background: #0B2E24
+header: #2A400F
+border: 

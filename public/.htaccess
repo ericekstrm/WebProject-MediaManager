@@ -1,0 +1,16 @@
+#stäng av Apache Content Negotiation
+Options -MultiViews
+
+#aktivera URL-omskrivning
+RewriteEngine On
+
+#bas-url-en
+RewriteBase //public/
+
+#inte om det är ett directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#inte om det är ett filnamn
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

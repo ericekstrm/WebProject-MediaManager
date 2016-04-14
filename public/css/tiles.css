@@ -1,0 +1,12 @@
+.movie_tile {
+    height: 350px;
+    background: #2A400F;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.movie_tile:hover {
+    border: 1px solid #0F1830;
+    cursor: pointer;
+}

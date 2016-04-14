@@ -1,0 +1,9 @@
+#content {
+    /*flexbox */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    position: relative;
+    top: 50px;
+}

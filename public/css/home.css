@@ -1,0 +1,11 @@
+#content {
+    position: relative;
+    top: 50px;
+}
+
+#topMovies {
+    /*flexbox */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
