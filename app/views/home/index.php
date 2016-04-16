@@ -17,9 +17,10 @@
 
             <a id="login" onclick="toggleDialog()"><div>Login</div></a>
         </div>
+        
         <div id="content">
             <h1>Top Movies</h1>
-            <div id="topMovies">
+            <div id="topList">
                 <?php
                 foreach ($data as $movie) {
                    echo "<div class='movie_tile'>";
@@ -30,7 +31,7 @@
                 ?>
             </div>
             <h1>Top TV-Shows</h1>
-            <div id="topMovies">
+            <div id="topList">
                 <?php
                 foreach ($data as $movie) {
                    echo "<div class='movie_tile'>";
@@ -41,6 +42,7 @@
                 ?>
             </div>
         </div>
+        
         <div id="loginBox">
             <form method="POST">
                 <input type="text"     name="user"  placeholder="Username">

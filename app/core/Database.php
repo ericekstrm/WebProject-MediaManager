@@ -24,10 +24,10 @@ class Database {
         return self::$instance;
     }
     
-    public function execute($sql) {
+    public function execute($sql, $params = []) {
         $stmt = $this->dbh->prepare($sql);
         
-        $stmt->execute();
+        $stmt->execute($params);
         return $stmt->fetchAll();
     }
 }

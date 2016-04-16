@@ -6,9 +6,10 @@ class getMovies {
     }
     
     public function getMovie($imdbID = "") {
-        $sql = "SELECT * FROM MovieDatabase WHERE imdbID='" . $imdbID . "'";
+        $sql = "SELECT * FROM MovieDatabase WHERE imdbID = :imdbID";
         $db = Database::getInstance();
-        return $db->execute($sql);
+        $params = [":imdbID" => $imdbID];
+        return $db->execute($sql, $params);
     }
     
     public function getAllMovies() {
