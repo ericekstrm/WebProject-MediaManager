@@ -12,10 +12,17 @@ class Controller {
     }
 
     public function login() {
-        $model = $this->model('getUsers');
-        $user = $model->getUserByName($_POST["user"]);
-        if (password_verify($_POST["pass"], $user["password"])) {
-            $_SESSION["loggedIn"] = $user["username"];
+        if (isset($_POST["login"])) {
+            $model = $this->model('getUsers');
+            $user = $model->getUserByName($_POST["user"])[0];
+            if (password_verify($_POST["pass"], $user["password"])) {
+                $_SESSION["loggedIn"] = $user["username"];
+            }
+        } else if(isset($_POST["reg"])) {
+            header("Location: /public/user/register");
+        } else if (isset($_POST["logout"])) {
+            session_destroy();
+            header("Location: /public/");
         }
     }
 }
