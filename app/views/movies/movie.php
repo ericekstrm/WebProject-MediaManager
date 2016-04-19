@@ -16,7 +16,7 @@
         </div>
         <div id="content">
             <?php
-            echo "<img src='" . $data[0]["Poster"] . "' width='150' height='225'>";
+            echo "<img src='" . $data[0]["Poster"] . "' id='poster'>";
             echo "<h1>" . $data[0]["Title"] . " (" . $data[0]["Year"] . ")</h1>";
             ?>
             <h2>Ratings</h2>

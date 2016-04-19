@@ -1,9 +1,17 @@
 #content {
-    /*flexbox */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background: red;
+    width: 1024px;
     
-    position: relative;
+    position: absolute;
     top: 50px;
+    left: 0px;
+}
+
+#poster {
+    width: 150px;
+    height: 225px;
+    
+    position: absolute;
+    top: 100px;
+    left: 100px;
 }
