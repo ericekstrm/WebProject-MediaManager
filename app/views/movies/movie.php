@@ -16,9 +16,21 @@
         </div>
         <div id="content">
             <?php
-            echo "<img src='" . $data[0]["Poster"] . "' width='200' height='300'>";
+            echo "<img src='" . $data[0]["Poster"] . "' width='150' height='225'>";
             echo "<h1>" . $data[0]["Title"] . " (" . $data[0]["Year"] . ")</h1>";
             ?>
+            <h2>Ratings</h2>
+            <ul>
+                <li>imdb</li>
+                <li>metascore</li>
+                <li>user score</li>
+            </ul>
+            <h2>People</h2>
+            <ul>
+                <li>actors</li>
+                <li>writers</li>
+                <li>director</li>
+            </ul>
         </div>
     </body>
 </html>
