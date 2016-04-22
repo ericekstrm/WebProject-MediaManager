@@ -1,0 +1,45 @@
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    position: relative;
+    top: 50px;
+}
+
+#content {
+    background: #2A400F;
+    width: 1024px;
+    min-width: 1024px;
+    padding: 5px;
+    
+    position: relative;
+    top: 50px;
+}
+
+#poster {
+    width: 150px;
+    height: 225px;
+}
+
+#topbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+#titlebox {
+    width: 84%;
+    margin-left: 5px;
+}
+
+#plot {
+    position: absolute;
+    left: 400px;
+    top: 150px;
+    font-size: 18px;
+}
+
+hr {
+    border-color: black;
+}

@@ -1,11 +1,8 @@
-#wrapper {
-    display: flex;
-    justify-content: center;
-}
-
 #content {
-    background: red;
-    width: 1024px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
     
     position: absolute;
     top: 50px;
@@ -15,18 +12,4 @@
 #poster {
     width: 150px;
     height: 225px;
-}
-
-#topbox {
-    position: relative;
-    top: 100px;
-    
-    
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    
-    /*debug*/
-    background: green;
-    opacity: 0.65;
 }
