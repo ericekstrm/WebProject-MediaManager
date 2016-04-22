@@ -17,14 +17,14 @@
         <div id="wrapper">
             <div id="content">
                 <div id="topbox">
-                    <?php echo "<img src='" . $data[0]["Poster"] . "' id='poster'>"?>
+                    <?="<img src='" . $data[0]["Poster"] . "' id='poster'>"?>
                     <div id="titlebox">
-                        <?php echo "<h1>" . $data[0]["Title"] . " (" . $data[0]["Year"] . ")</h1>"?>
+                        <?="<h1>" . $data[0]["Title"] . " (" . $data[0]["Year"] . ")</h1>"?>
                         <hr>
-                        <?php echo "<h2>" . $data[0]["Runtime"] . " | " . $data[0]["ReleaseDate"] . "</h2>"?>
+                        <?="<h2>" . $data[0]["Runtime"] . " | " . $data[0]["ReleaseDate"] . "</h2>"?>
                     </div>
                     <div id="plot">
-                        <?php echo "<p>" . $data[0]["Plot"] . ")</p>"?>
+                        <?="<p>" . $data[0]["Plot"] . "</p>"?>
                     </div>
                 </div>
                 <h2>Ratings</h2>
