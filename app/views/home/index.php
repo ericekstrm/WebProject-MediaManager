@@ -36,7 +36,7 @@
                 }
                 ?>
             </div>
-            <h1>Top TV-Shows</h1>
+            <h1>Top TV-Shows (Work in Progress)</h1>
             <div id="topList">
                 <?php
                 foreach ($data as $movie) {
