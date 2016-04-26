@@ -19,9 +19,9 @@
                 <div id="topbox">
                     <img src=' <?= $data["movie"]["Poster"]?> ' id='poster'>
                     <div id="titlebox">
-                        <h1> <?= $data["movie"]["Title"] . " (" . $data[0]["Year"]?> )</h1>
+                        <h1> <?= $data["movie"]["Title"] . " (" . $data["movie"]["Year"]?> )</h1>
                         <hr>
-                        <h2> <?= $data["movie"]["Runtime"] . " | " . $data[0]["ReleaseDate"] . "</h2>"?>
+                        <h2> <?= $data["movie"]["Runtime"] . " | " . $data["movie"]["ReleaseDate"] . "</h2>"?>
                     </div>
                     <div id="plot">
                         <p> <?= $data["movie"]["Plot"]?> </p>

@@ -28,7 +28,7 @@
                 if (isset($data["emailInvalid"]) || isset($data["emailTaken"])) {
                     echo "<input type='text' name='email' placeholder='E-Mail' style='border-color:red;' required>";
                 } else {
-                    echo "<input type='password' name='email' placeholder='E-Mail' required>";
+                    echo "<input type='text' name='email' placeholder='E-Mail' required>";
                 }
 
                 echo "<br>";

@@ -13,7 +13,8 @@ class Movie extends Controller {
         } else {
             
             if (isset($_POST["submit"])) {
-                $model->addComment();
+                $message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_SPECIAL_CHARS);
+                var_dump($model->addComment($imdbID, $message, $_SESSION["loggedIn"]));
             }
             
             //params
