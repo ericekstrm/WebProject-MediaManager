@@ -47,14 +47,6 @@
     font-size: 18px;
 }
 
-hr {
-    border-color: black;
-}
-
-ul {
-    list-style-type: none;
-}
-
 #ratings {
     border: 2px solid gray;
     margin-top: 10px;
@@ -69,6 +61,25 @@ ul {
     margin-right: 5px;
 }
 
+#comments {
+    border: 2px solid gray;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
 h2 {
     line-height: 0px;
+}
+
+hr {
+    border-color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+textarea {
+    resize: none;
 }

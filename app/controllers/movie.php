@@ -3,13 +3,24 @@
 class Movie extends Controller {
     
     public function index($imdbID = "") {
-        $getMovies = $this->model("getMovies");
+        $model = $this->model("getMovies");
+        
         
         if (strcmp($imdbID,"") === 0) {
-            $data = $getMovies->getAllMovies();
+            //if no movie is selected
+            $data = $model->getAllMovies();
             $this->view("movies/index", $data);
         } else {
-            $data = $getMovies->getMovie($imdbID);
+            
+            if (isset($_POST["submit"])) {
+                $model->addComment();
+            }
+            
+            //params
+            $movie = $model->getMovie($imdbID)[0];
+            $comments = $model->getComments($imdbID);
+            $data = ["movie" => $movie, "comments" => $comments];
+            
             $this->view("movies/movie", $data);
         }
     }

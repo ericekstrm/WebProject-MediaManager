@@ -26,4 +26,21 @@ class getMovies {
         $db = Database::getInstance();
         return $db->execute($sql);
     }
+    
+    public function getComments($imdbID = "") {
+        $sql = "SELECT * FROM MovieComments WHERE imdbID = :imdbID";
+        $db = Database::getInstance();
+        $params = [":imdbID" => $imdbID];
+        return $db->execute($sql, $params);
+    }
+    
+    public function addComment($imdbID, $message, $user) {
+        $sql = "INSERT INTO MovieComments(imdbID, message, username)
+                VALUES (:imdbID, :message, :user)";
+        $params = [":imdbID" => $imdbID,
+                   ":message" => $message,
+                   ":user" => $user];
+        $db = Database::getInstance();
+        return $db->execute($sql, $params);
+    }
 }

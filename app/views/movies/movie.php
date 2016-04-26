@@ -17,31 +17,44 @@
         <div id="wrapper">
             <div id="content">
                 <div id="topbox">
-                    <img src=' <?= $data[0]["Poster"]?> ' id='poster'>
+                    <img src=' <?= $data["movie"]["Poster"]?> ' id='poster'>
                     <div id="titlebox">
-                        <h1> <?= $data[0]["Title"] . " (" . $data[0]["Year"]?> )</h1>
+                        <h1> <?= $data["movie"]["Title"] . " (" . $data[0]["Year"]?> )</h1>
                         <hr>
-                        <h2> <?= $data[0]["Runtime"] . " | " . $data[0]["ReleaseDate"] . "</h2>"?>
+                        <h2> <?= $data["movie"]["Runtime"] . " | " . $data[0]["ReleaseDate"] . "</h2>"?>
                     </div>
                     <div id="plot">
-                        <p> <?= $data[0]["Plot"]?> </p>
+                        <p> <?= $data["movie"]["Plot"]?> </p>
                     </div>
                 </div>
                 <div id="ratings">
                     <h2>Ratings</h2>
                     <ul>
-                        <li>imdbRating: <?= $data[0]["imdbRating"]?>/10</li>
-                        <li>Metascore: <?= $data[0]["Metascore"]?>/100</li>
-                        <li>User Score <?= $data[0]["rating"] + 1?>/5</li>
+                        <li>imdbRating: <?= $data["movie"]["imdbRating"]?>/10</li>
+                        <li>Metascore: <?= $data["movie"]["Metascore"]?>/100</li>
+                        <li>User Score <?= $data["movie"]["rating"] + 1?>/5</li>
                     </ul>
                 </div>
                 <div id="people">
                 <h2>People</h2>
                     <ul>
-                        <li>Actors: <?= $data[0]["Actors"]?></li>
-                        <li>Writers: <?= $data[0]["Writer"]?></li>
-                        <li>Director: <?= $data[0]["Director"]?></li>
+                        <li>Actors: <?= $data["movie"]["Actors"]?></li>
+                        <li>Writers: <?= $data["movie"]["Writer"]?></li>
+                        <li>Director: <?= $data["movie"]["Director"]?></li>
                     </ul>
+                </div>
+                <div id="comments">
+                    <?php if (isset($_SESSION["loggedIn"])) : ?>
+                    <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Share your thoughts..."></textarea>
+                    <form method="POST">
+                        <input type="hidden"   name="user"    value="">
+                        <input type="hidden"   name="imdbID"  value="">
+                        <input type='submit'   name='submit'     value='Submit'>
+                    </form>
+                    <?php endif;
+                    foreach($data["comments"] as $comment) {
+                        echo $comment["message"];
+                    }?>
                 </div>
             </div>
         </div>
