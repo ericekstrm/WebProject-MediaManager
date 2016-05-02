@@ -45,15 +45,17 @@
                 </div>
                 <div id="comments">
                     <?php if (isset($_SESSION["loggedIn"])) : ?>
-                    <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Share your thoughts..."></textarea>
-                    <form method="POST">
+                    <textarea rows="4" cols="50" name="message" form="commentform" placeholder="Share your thoughts..."></textarea>
+                    <form method="POST" id="commentform">
                         <input type="hidden"   name="user"    value="">
                         <input type="hidden"   name="imdbID"  value="">
                         <input type='submit'   name='submit'     value='Submit'>
                     </form>
                     <?php endif;
                     foreach($data["comments"] as $comment) {
+                        echo "<div id='comment'><p>";
                         echo $comment["message"];
+                        echo "</p></div>";
                     }?>
                 </div>
             </div>

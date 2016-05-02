@@ -35,12 +35,12 @@ class getMovies {
     }
     
     public function addComment($imdbID, $message, $user) {
-        $sql = "INSERT INTO MovieComments(imdbID, message, username)
-                VALUES (:imdbID, :message, :user)";
+        $sql = "INSERT INTO MovieComments(imdbID, message, username) VALUES (:imdbID, :message, :user)";
         echo $sql;
         $params = [":imdbID" => $imdbID,
                    ":message" => $message,
                    ":user" => $user];
+        var_dump($params);
         $db = Database::getInstance();
         return $db->execute($sql, $params);
     }

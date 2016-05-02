@@ -12,9 +12,13 @@ class Movie extends Controller {
             $this->view("movies/index", $data);
         } else {
             
+            //if a comment should be added
             if (isset($_POST["submit"])) {
                 $message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_SPECIAL_CHARS);
-                var_dump($model->addComment($imdbID, $message, $_SESSION["loggedIn"]));
+                if (strcmp($message, "") !== 0) {
+                    $model->addComment($imdbID, $message, $_SESSION["loggedIn"]);
+                }
+                header("Location: #");
             }
             
             //params
