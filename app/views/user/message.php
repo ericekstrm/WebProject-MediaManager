@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User - <?= $data["username"]?></title>
+        <title>Home</title>
         <meta charset="UTF-8">
-
+        
         <link rel="stylesheet" type="text/css" href="/public/css/style.css">
         <link rel="stylesheet" type="text/css" href="/public/css/home.css">
         <link rel="stylesheet" type="text/css" href="/public/css/login.css">
@@ -15,6 +15,8 @@
             <a href="/public/tvshows"><div>TV-shows</div></a>
         </div>
         <div id="content">
+            <h1><?= $data ?></h1>
+            <p>Go <a href="../home/">back to the start page</a> to log in</p>
         </div>
     </body>
 </html>

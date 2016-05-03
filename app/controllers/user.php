@@ -3,10 +3,23 @@
 class User extends Controller {
 
     public function index($username = "") {
-        echo "hello";
 
-        $getUser = $this->model('getUsers');
-        $data = $getUser->getAllUsers();
+        $model = $this->model('getUsers');
+
+        //check if locking for specific user
+        if (strcmp($username, "") !== 0) {
+            $data = $model->getUserByName($username);
+            //check if that user exist
+            if (count($data) > 0) {
+                $data = $data[0];
+            } else {
+                $this->view('user/message', "You are viewing a user that does not exist");
+            }
+        } else if (isset($_SESSION["loggedIn"])) {
+            $data = $model->getUserByName($_SESSION["loggedIn"])[0];
+        } else {
+            $this->view('user/message', "You are not logged in so you can not se your profile");
+        }
 
         $this->view('user/index', $data);
     }
@@ -44,11 +57,10 @@ class User extends Controller {
 
             if (count($errors) === 0) {
                 $model->addUser($user, $email, password_hash($pass, PASSWORD_DEFAULT));
-                $this->view("user/registered");
+                $this->view("user/message" , "You are now registered");
                 return;
             }
         }
         $this->view('user/register', $errors);
     }
-
 }

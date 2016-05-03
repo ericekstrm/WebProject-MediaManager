@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Register</title>
         <meta charset="UTF-8">
 
         <link rel="stylesheet" type="text/css" href="/public/css/style.css">
