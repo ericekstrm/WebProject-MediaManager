@@ -17,6 +17,7 @@ class Controller {
             $user = $model->getUserByName($_POST["user"])[0];
             if (password_verify($_POST["pass"], $user["password"])) {
                 $_SESSION["loggedIn"] = $user["username"];
+                header("location: /public/");
             }
         } else if(isset($_POST["reg"])) {
             header("Location: /public/user/register");

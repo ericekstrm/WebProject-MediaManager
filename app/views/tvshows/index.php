@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Movies</title>
+        <title>TV-Shows</title>
         <meta charset="UTF-8">
 
         <link rel="stylesheet" type="text/css" href="/public/css/style.css">
-        <link rel="stylesheet" type="text/css" href="/public/css/movies.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/home.css">
         <link rel="stylesheet" type="text/css" href="/public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="/public/css/login.css">
     </head>
     <body>
         <div id="header">
             <a href="/public"><div>Home</div></a>
-            <a href="/public/movie"><div id="current">Movies</div></a>
-            <a href="/public/tvshows"><div>TV-shows</div></a>
+            <a href="/public/movie"><div>Movies</div></a>
+            <a href="/public/tvshows"><div id="current">TV-shows</div></a>
 
             <?php
             if (isset($_SESSION["loggedIn"])) {
@@ -25,12 +25,7 @@
         </div>
         
         <div id="content">
-            <?php foreach ($data as $movie) {
-                echo "<div class='movie_tile'>";
-                echo "<a href='movie/" . $movie["imdbID"] . "'>";
-                echo "<img src='" . $movie["Poster"] . "' width='200' height='300'>";
-                echo "</div>";
-            }?>
+            <h1>Det finns inga serier för tillfället, fuck off</h1>
         </div>
 
         <div id="loginBox">
