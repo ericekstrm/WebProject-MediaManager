@@ -8,12 +8,13 @@
         <link rel="stylesheet" type="text/css" href="/public/css/home.css">
         <link rel="stylesheet" type="text/css" href="/public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="/public/css/login.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/header.css">
     </head>
     <body>
         <div id="header">
-            <a href="/public"><div id="current">Home</div></a>
-            <a href="/public/movie"><div>Movies</div></a>
-            <a href="/public/tvshows"><div>TV-shows</div></a>
+            <a href="/public"><div class="button current">Home</div></a>
+            <a href="/public/movie"><div class="button">Movies</div></a>
+            <a href="/public/tvshows"><div class="button">TV-shows</div></a>
 
             <?php require_once '../app/views/modules/login.php'; ?>
         </div>

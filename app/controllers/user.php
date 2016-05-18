@@ -3,8 +3,9 @@
 class User extends Controller {
 
     public function index($username = "") {
-
         $model = $this->model('getUsers');
+        
+        $this->handleLogin();
 
         //check if locking for specific user
         if (strcmp($username, "") !== 0) {
@@ -18,7 +19,7 @@ class User extends Controller {
         } else if (isset($_SESSION["loggedIn"])) {
             $data = $model->getUserByName($_SESSION["loggedIn"])[0];
         } else {
-            $this->view('user/message', "You are not logged in so you can not se your profile");
+            $this->view('user/message', "You are not logged in so you can not see your profile");
         }
 
         $this->view('user/index', $data);

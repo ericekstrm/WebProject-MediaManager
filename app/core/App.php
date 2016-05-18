@@ -45,5 +45,4 @@ class App {
             return $url;
         }
     }
-
 }

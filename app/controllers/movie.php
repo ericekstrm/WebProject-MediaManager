@@ -5,6 +5,7 @@ class Movie extends Controller {
     public function index($imdbID = "") {
         $model = $this->model("getMovies");
         
+        $this->handleLogin();
         
         if (strcmp($imdbID,"") === 0) {
             //if no movie is selected

@@ -3,7 +3,7 @@
 class Home extends Controller {
     
     public function index($name = "") {
-        $this->login();
+        $this->handleLogin();
         
         $getMovies = $this->model("getMovies");
         $data = $data = $getMovies->getTopMovies();

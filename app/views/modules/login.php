@@ -1,8 +1,8 @@
 <?php
     if (isset($_SESSION["loggedIn"])) {
-        echo "<a id='login' onclick='toggleDialog()'><div>" . $_SESSION["loggedIn"] . "</div></a>";
+        echo "<a id='login' onclick='toggleDialog()'><div class='button'>" . $_SESSION["loggedIn"] . "</div></a>";
     } else {
-        echo "<a id='login' onclick='toggleDialog()'><div>Login</div></a>";
+        echo "<a id='login' onclick='toggleDialog()'><div class='button'>Login</div></a>";
     }
 ?>
 

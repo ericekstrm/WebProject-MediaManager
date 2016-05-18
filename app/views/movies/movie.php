@@ -6,13 +6,16 @@
         <link rel="stylesheet" type="text/css" href="/public/css/style.css">
         <link rel="stylesheet" type="text/css" href="/public/css/movie.css">
         <link rel="stylesheet" type="text/css" href="/public/css/tiles.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/login.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/header.css">
     </head>
     <body>
         <div id="header">
-            <a href="/public"><div>Home</div></a>
-            <a href="/public/movie"><div id="current">Movies</div></a>
-            <a href="/public/tvshows"><div>TV-shows</div></a>
-            <a id="login"><div>Login</div></a>
+            <a href="/public"><div class="button">Home</div></a>
+            <a href="/public/movie"><div class="button current">Movies</div></a>
+            <a href="/public/tvshows"><div class="button">TV-shows</div></a>
+            
+            <?php require_once '../app/views/modules/login.php'; ?>
         </div>
         <div id="wrapper">
             <div id="content">

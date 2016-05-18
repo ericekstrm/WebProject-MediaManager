@@ -10,8 +10,8 @@ class Controller {
     public function view($view, $data = []) {
         require_once '../app/views/' . $view . '.php';
     }
-
-    public function login() {
+    
+    public function handleLogin() {
         if (isset($_POST["login"])) {
             $model = $this->model('getUsers');
             $user = $model->getUserByName($_POST["user"])[0];
