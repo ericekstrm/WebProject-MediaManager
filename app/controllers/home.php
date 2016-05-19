@@ -5,9 +5,9 @@ class Home extends Controller {
     public function index($name = "") {
         $this->handleLogin();
         
-        $getMovies = $this->model("getMovies");
-        $data = $data = $getMovies->getTopMovies();
+        $model = $this->model("getMovies");
+        $data = $model->getTopMovies();
             
-        $this->view('home/index',$data);
+        $this->view('home/index', $data);
     }
 }

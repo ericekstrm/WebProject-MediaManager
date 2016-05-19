@@ -15,7 +15,7 @@
             <a href="/public/movie"><div class="button current">Movies</div></a>
             <a href="/public/tvshows"><div class="button">TV-shows</div></a>
             
-            <?php require_once '../app/views/modules/login.php'; ?>
+            <?php require_once '../app/modules/login.php'; ?>
         </div>
         <div id="wrapper">
             <div id="content">
