@@ -71,7 +71,33 @@
 #comment {
     border: 1px solid gray;
     margin-top: 5px;
-    
+}
+
+.watch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 40px;
+    background: #1E1E1E;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.watched {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 40px;
+    background: #A349A4;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 h2 {

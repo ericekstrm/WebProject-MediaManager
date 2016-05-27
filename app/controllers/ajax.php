@@ -6,13 +6,22 @@ class Ajax extends Controller {
         
     }
     
+    //fult som fan,
+    //borde inte ha det här som en controller 
+    //eftersom det innebär att man kan surfa hit
+    
     public function setseen($movie) {
-        $user = $_SESSION["loggedIn"];
-
-        echo $movie;
+        $user = $_SESSION["userid"];
+        
         echo $user;
+        echo $movie;
         
         $model = $this->model("getViews");
-        $model->addView($user, $movie);
+        $views = $model->getViewsByMovieAndUser($user, $movie);
+        if (count($views) <= 0) {
+            $model->addView($user, $movie);
+        } else {
+            
+        }
     }
 }

@@ -7,9 +7,17 @@ class Movie extends Controller {
         
         $this->handleLogin();
         
+        //if no movie is selected
         if (strcmp($imdbID,"") === 0) {
-            //if no movie is selected
-            $data = $model->getAllMovies();
+            $movies = $model->getAllMovies();
+            $model = $this->model("getViews");
+            $views = $model->getViewsByUser($_SESSION["userid"]);
+            foreach ($views as $key => $view) {
+                $views[$key] = $view["movieid"];
+            }
+            
+            $data = ["movies" => $movies, "views" => $views];
+            
             $this->view("movies/index", $data);
         } else {
             
@@ -22,10 +30,21 @@ class Movie extends Controller {
                 header("Location: #");
             }
             
+            if (isset($_SESSION["loggedIn"])) {
+                $model = $this->model("getViews");
+                $view = $model->getViewsByMovieAndUser($_SESSION["userid"], $imdbID);
+                if (count($view) > 0) {
+                    $view = true;
+                } else {
+                    $view = false;
+                }
+            }
+            
             //params
+            $model = $this->model("getMovies");
             $movie = $model->getMovie($imdbID)[0];
             $comments = $model->getComments($imdbID);
-            $data = ["movie" => $movie, "comments" => $comments];
+            $data = ["movie" => $movie, "comments" => $comments, "view" => $view];
             
             $this->view("movies/movie", $data);
         }

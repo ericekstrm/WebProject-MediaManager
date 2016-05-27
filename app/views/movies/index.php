@@ -9,6 +9,8 @@
         <link rel="stylesheet" type="text/css" href="/public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="/public/css/login.css">
         <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+        
+        <script type="text/javascript" src="/public/js/ajax.js"></script>
     </head>
     <body>
         <div id="header">
@@ -20,28 +22,18 @@
         </div>
         
         <div id="content">
-            <?php foreach ($data as $movie) { ?>
+            <?php foreach ($data["movies"] as $movie) { ?>
                 <div class="movie_tile">
                     <img onclick="window.location='movie/<?=$movie["imdbID"]?>'" src="<?=$movie["Poster"]?>">
-                    <?php if (isset($_SESSION["loggedIn"])) { ?>
-                        <div class="watch" id="<?=$movie["imdbID"]?>" onclick="ajax(this.id)"></div>
-                    <?php } ?>
+                    <?php if (isset($_SESSION["loggedIn"])) {
+                            if (in_array($movie["imdbID"], $data["views"])) {
+                                echo '<div class="watched" id="' . $movie["imdbID"] . '"></div>';
+                            } else {
+                                echo '<div class="watch" id="' . $movie["imdbID"] . '" onclick="setseen(this.id)"></div>';
+                            }
+                        } ?>
                 </div>
             <?php }?>
         </div>
-        <script type="text/javascript">
-            function ajax(id) {
-                var xmlhttp = new XMLHttpRequest();
-            
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById(id).style.backgroundImage = "url('/public/images/checked.png')";
-                        console.log(xmlhttp.responseText);
-                    }
-                };
-                xmlhttp.open("GET", "/public/ajax/setseen/" + id, true);
-                xmlhttp.send();
-            }
-        </script>
     </body>
 </html>

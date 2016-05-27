@@ -5,9 +5,11 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="/public/css/style.css">
         <link rel="stylesheet" type="text/css" href="/public/css/movie.css">
-        <link rel="stylesheet" type="text/css" href="/public/css/tiles.css">
+
         <link rel="stylesheet" type="text/css" href="/public/css/login.css">
         <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+        
+        <script type="text/javascript" src="/public/js/ajax.js"></script>
     </head>
     <body>
         <div id="header">
@@ -29,6 +31,13 @@
                     <div id="plot">
                         <p> <?= $data["movie"]["Plot"]?> </p>
                     </div>
+                    <?php if (isset($_SESSION["loggedIn"])) {
+                        if ($data["view"]) {
+                            echo '<div class="watched">Watched</div>';
+                        } else {
+                            echo '<div class="watch" id="' . $movie["imdbID"] . '" onclick="setseen(this.id)">Watch</div>';
+                        }
+                    } ?>
                 </div>
                 <div id="ratings">
                     <h2>Ratings</h2>

@@ -6,7 +6,15 @@ class Home extends Controller {
         $this->handleLogin();
         
         $model = $this->model("getMovies");
-        $data = $model->getTopMovies();
+        $movies = $model->getTopMovies();
+        
+        $model = $this->model("getViews");
+        $views = $model->getViewsByUser($_SESSION["userid"]);
+        foreach ($views as $key => $view) {
+            $views[$key] = $view["movieid"];
+        }
+            
+        $data = ["movies" => $movies, "views" => $views];
             
         $this->view('home/index', $data);
     }

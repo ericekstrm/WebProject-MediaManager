@@ -9,6 +9,8 @@
         <link rel="stylesheet" type="text/css" href="/public/css/tiles.css">
         <link rel="stylesheet" type="text/css" href="/public/css/login.css">
         <link rel="stylesheet" type="text/css" href="/public/css/header.css">
+        
+        <script type="text/javascript" src="/public/js/ajax.js"></script>
     </head>
     <body>
         <div id="header">
@@ -22,25 +24,21 @@
         <div id="content">
             <h1>Top Movies</h1>
             <div id="topList">
-                <?php
-                foreach ($data as $movie) {
-                   echo "<div class='movie_tile'>";
-                   echo "<a href='movie/" . $movie["imdbID"] . "'>";
-                   echo "<img src='" . $movie["Poster"] . "' width='200' height='300'>";
-                   echo "</a></div>";
-                }
-                ?>
+                <?php foreach ($data["movies"] as $movie) { ?>
+                <div class="movie_tile">
+                    <img onclick="window.location='movie/<?=$movie["imdbID"]?>'" src="<?=$movie["Poster"]?>">
+                    <?php if (isset($_SESSION["loggedIn"])) {
+                        if (in_array($movie["imdbID"], $data["views"])) {
+                            echo '<div class="watched" id="' . $movie["imdbID"] . '"></div>';
+                        } else {
+                            echo '<div class="watch" id="' . $movie["imdbID"] . '" onclick="setseen(this.id)"></div>';
+                        }
+                    } ?>
+                </div>
+                <?php }?>
             </div>
             <h1>Top TV-Shows (Work in Progress)</h1>
             <div id="topList">
-                <?php
-                foreach ($data as $movie) {
-                   echo "<div class='movie_tile'>";
-                   echo "<a href='movie/" . $movie["imdbID"] . "'>";
-                   echo "<img src='" . $movie["Poster"] . "' width='200' height='300'>";
-                   echo "</a></div>";
-                }
-                ?>
             </div>
         </div>
     </body>
