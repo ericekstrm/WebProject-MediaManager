@@ -1,17 +1,16 @@
 .movie_tile {
     height: 350px;
     background: #2A400F;
-    margin: 5px;
+    margin: 2px;
     border: 1px solid black;
-    border-radius: 5px;
 }
 
 .movie_tile:hover {
-    border: 1px solid #0F1830;
+    border: 1px solid white;
 }
 
 .movie_tile img {
-    width: 200px; 
+    width: 200px;
     height: 300px;
     cursor: pointer;
 }

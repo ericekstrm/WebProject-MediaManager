@@ -61,7 +61,7 @@
     margin-right: 5px;
 }
 
-#comments {
+.comments {
     border: 2px solid gray;
     padding: 5px;
     margin-top: 10px;
@@ -77,11 +77,9 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 100px;
-    height: 40px;
-    background: #1E1E1E;
-    text-align: center;
-    line-height: 40px;
+    width: 150px;
+    height: 50px;
+    background-image: url("/public/images/watch.png");
     cursor: pointer;
     border: 1px solid black;
     border-radius: 5px;
@@ -91,11 +89,9 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 100px;
-    height: 40px;
-    background: #A349A4;
-    text-align: center;
-    line-height: 40px;
+    width: 150px;
+    height: 50px;
+    background-image: url("/public/images/watched.png");
     border: 1px solid black;
     border-radius: 5px;
 }

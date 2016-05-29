@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo $data[0]["Title"]?></title>
+        <title><?php echo $data["movie"]["Title"]?></title>
         <meta charset="UTF-8">
+        
         <link rel="stylesheet" type="text/css" href="/public/css/style.css">
         <link rel="stylesheet" type="text/css" href="/public/css/movie.css">
-
         <link rel="stylesheet" type="text/css" href="/public/css/login.css">
         <link rel="stylesheet" type="text/css" href="/public/css/header.css">
         
@@ -22,7 +22,7 @@
         <div id="wrapper">
             <div id="content">
                 <div id="topbox">
-                    <img src=' <?= $data["movie"]["Poster"]?> ' id='poster'>
+                    <img src=' <?= $data["movie"]["Poster"]?> ' id='poster' alt="<?=$data["movie"]["imdbID"]?>">
                     <div id="titlebox">
                         <h1> <?= $data["movie"]["Title"] . " (" . $data["movie"]["Year"]?> )</h1>
                         <hr>
@@ -32,10 +32,11 @@
                         <p> <?= $data["movie"]["Plot"]?> </p>
                     </div>
                     <?php if (isset($_SESSION["loggedIn"])) {
+                        
                         if ($data["view"]) {
-                            echo '<div class="watched">Watched</div>';
+                            echo '<div class="watched" id="' . $data["movie"]["imdbID"] . '"></div>';
                         } else {
-                            echo '<div class="watch" id="' . $movie["imdbID"] . '" onclick="setseen(this.id)">Watch</div>';
+                            echo '<div class="watch" id="' . $data["movie"]["imdbID"] . '" onclick="setseen(this.id)"></div>';
                         }
                     } ?>
                 </div>
@@ -67,7 +68,7 @@
                         <p>login to leave a comment</p>
                     <?php }
                     foreach($data["comments"] as $comment) {
-                        echo "<div id='comment'><p>";
+                        echo "<div class='comment'><p>";
                         echo $comment["message"];
                         echo "</p></div>";
                     }?>

@@ -19,7 +19,7 @@
         </div>
         
         <div id="content">
-            <h1>Det finns inga serier för tillfället, fuck off</h1>
+            <h1>Det finns inga serier för tillfället</h1>
         </div>
     </body>
 </html>

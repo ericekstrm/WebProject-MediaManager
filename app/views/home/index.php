@@ -26,7 +26,7 @@
             <div id="topList">
                 <?php foreach ($data["movies"] as $movie) { ?>
                 <div class="movie_tile">
-                    <img onclick="window.location='movie/<?=$movie["imdbID"]?>'" src="<?=$movie["Poster"]?>">
+                    <img onclick="window.location='movie/<?=$movie["imdbID"]?>'" src="<?=$movie["Poster"]?>" alt="<?=$movie["imdbID"]?>">
                     <?php if (isset($_SESSION["loggedIn"])) {
                         if (in_array($movie["imdbID"], $data["views"])) {
                             echo '<div class="watched" id="' . $movie["imdbID"] . '"></div>';
@@ -36,9 +36,6 @@
                     } ?>
                 </div>
                 <?php }?>
-            </div>
-            <h1>Top TV-Shows (Work in Progress)</h1>
-            <div id="topList">
             </div>
         </div>
     </body>
